@@ -491,6 +491,13 @@
         restartButton.style.display = "none";
       });
 
+      // Agregar soporte táctil para el botón de restart
+      restartButton.addEventListener("touchstart", function (event) {
+        event.preventDefault();
+        resetGame();
+        restartButton.style.display = "none";
+      });
+
       function drawPlatforms() {
         platforms.forEach(({ x, w }) => {
           // Draw platform

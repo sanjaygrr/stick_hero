@@ -317,6 +317,10 @@
 
       // Agregar soporte para eventos táctiles
       window.addEventListener("touchstart", function (event) {
+        // Si el toque fue en el botón de restart, no hacer nada
+        if (event.target === restartButton) {
+          return;
+        }
         event.preventDefault(); // Prevenir el comportamiento por defecto
         if (phase == "waiting") {
           lastTimestamp = undefined;
@@ -327,6 +331,10 @@
       });
 
       window.addEventListener("touchend", function (event) {
+        // Si el toque fue en el botón de restart, no hacer nada
+        if (event.target === restartButton) {
+          return;
+        }
         event.preventDefault(); // Prevenir el comportamiento por defecto
         if (phase == "stretching") {
           phase = "turning";
